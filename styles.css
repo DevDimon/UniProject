@@ -1,0 +1,224 @@
+body {
+    margin: 0 auto;
+}
+
+.main-page {
+    /* background-image: url(./src/backgroundBeer.png); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 62.9375rem;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(./src/backgroundBeer.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 145px;
+}
+
+.main-page-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-page-header-top {
+    width: 70rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-page-header-socials {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main-page-header-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 35px;
+    color: white;
+}
+
+.main-page-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    color: white;
+}
+
+.logo {
+    width: 94px;
+    height: 111px;
+    padding-top: 10px;
+}
+
+.search-cart {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main-page-header-bottom {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    width: 50rem;
+    font-size: 16px;
+    font-weight: bolder;
+    justify-content: space-between;
+}
+
+.main-page-main {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 69rem;
+    gap: 28px;
+}
+
+.main-page-main-title {
+    font-size: 80px;
+    width: 650px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.main-page-main-text {
+    font-size: 16px;
+    width: 800px;
+    text-align: center;
+}
+
+button {
+    width: 255px;
+    height: 50px;
+    background-color: #FDCF55;
+    border-radius: 50px;
+    border: 2px solid #FDCF55;
+}
+
+.we-page {
+    width: 100%;
+    height: 590px;
+    background-image: url(./src/background-stack.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 45px;
+    align-items: center;
+}
+
+.we-page-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.we-page-main {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.we-page-main-container {
+    width: 150px;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.we-page-main-container-text {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.stock-page {
+    height: 605px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    color: white;
+    background-image: url(./src/woodbg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.stock-page-top {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.stock-page-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
+.stock-page-main-top {
+    display: flex;
+    flex-direction: row;
+    gap: 130px;
+    align-items: center;
+}
+
+.stock-page-main-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 190px;
+    align-items: center;
+}
+
+.stock-page-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+.stock-page-main-content-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.interruption {
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5)), url(./src/hmelbg.png);
+}
+
+.interruption-text {
+    font-size: 40px;
+    font-weight: 500;
+    width: 400px;
+}
