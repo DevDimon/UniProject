@@ -720,7 +720,7 @@ footer {
     height: 364px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     border: 2px solid white;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5)), url(./src/delivery-bg.png);
@@ -741,4 +741,35 @@ footer {
     height: 50px;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
+}
+
+.how-to-buy {
+    height: 620px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5)), url(./src/htb-bg.png);
+    color: white;
+}
+
+.how-to-buy-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
+}
+
+.how-to-buy-title {
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.how-to-buy-text {
+    white-space: pre-line;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 300;
 }
