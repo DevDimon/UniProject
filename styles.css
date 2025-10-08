@@ -688,3 +688,57 @@ footer {
 .why-we-main-cart-text {
     text-align: center;
 }
+
+.delivery {
+    height: 460px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.delivery-left {
+    width: 830px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: start;
+}
+
+.delivery-left-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.delivery-left-text {
+    white-space: pre-line;
+}
+
+.delivery-right {
+    width: 255px;
+    height: 364px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid white;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5)), url(./src/delivery-bg.png);
+    color: white;
+}
+
+.delivery-right-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.delivery-right-text {
+    white-space: pre-line;
+}
+
+.input-delivery {
+    width: 225px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
