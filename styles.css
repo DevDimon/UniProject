@@ -773,3 +773,223 @@ footer {
     line-height: 20px;
     font-weight: 300;
 }
+
+.policy-main {
+    height: 2900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: pre-line;
+    background-image: url();
+    font-size: 14px;
+    line-height: 30px;
+    letter-spacing: -0.6px;
+}
+
+.contacts-main {
+    height: 921px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./src/paper-contacts-bg.png);
+}
+
+.contacts-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 150px;
+    /* align-items: center; */
+}
+
+.contacts-top-left {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.contacts-top-left-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contacts-top-left-top-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contacts-top-left-top-text {
+    font-size: 20px;
+}
+
+.contacts-top-left-bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contacts-top-left-bottom-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.contacts-top-left-bottom-socials {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.contacts-top-left-socials-content {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.contacts-top-right {
+    display: flex;
+    flex-direction: column;
+    width: 540px;
+    gap: 10px;
+}
+
+.contacts-top-right-title {
+    font-size: 30px;
+    font-weight: bold;
+    white-space: pre-line;
+}
+
+.contacts-inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contacts-input-normal {
+    width: 225px;
+    height: 50px;
+    border: 2px solid #C7C7C7;
+    border-radius: 5px;
+}
+
+.contacts-input-big {
+    width: 540px;
+    height: 137px;
+    border: 2px solid #C7C7C7;
+}
+
+.contacts-top-right-text {
+    font-size: 11px;
+    white-space: pre-line;
+}
+
+.complectation-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 35px 0 35px 0;
+}
+
+.complectation-main-title {
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    width: 1107px;
+    text-align: start;
+}
+
+.complectation-main-text {
+    display: flex;
+    white-space: pre-line;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: start;
+    width: 1107px;
+}
+
+.complectation-main-img {
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.complectation-message {
+    height: 439px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5)), url(./src/complectation-bg-hmel.png);
+    gap: 10px;
+}
+
+.complectation-message-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    white-space: pre-line;
+}
+
+.complectation-message-text {
+    font-size: 11px;
+    color: white;
+}
+
+.complectation-message-inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+.complectation-input-normal {
+    width: 255px;
+    height: 50px;
+    border: 2px solid #C7C7C7;
+    border-radius: 5px;
+}
+
+.complectation-input-big {
+    width: 540px;
+    height: 137px;
+    border: 2px solid #C7C7C7;
+    border-radius: 5px;
+}
+
+.distribution-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 35px 0 35px 0;
+}
+
+.distribution-main-title {
+    display: flex;
+    font-size: 16px;
+    font-weight: bold;
+    width: 1107px;
+    text-align: start;
+}
+
+.distribution-main-text {
+    display: flex;
+    white-space: pre-line;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: start;
+    width: 1107px;
+}
+
+.distribution-main-img {
+    display: flex;
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
