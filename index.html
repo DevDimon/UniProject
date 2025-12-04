@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,12 +13,40 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./stylesTest.css">
     <title>UniProject</title>
 </head>
 
 <body>
     <div class="main-page">
+        <!-- Слайдер фоновых изображений -->
+        <div class="slider-container">
+            <div class="slides-wrapper">
+                <div class="slide active"
+                    style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(./src/backgroundBeer.png)">
+                </div>
+                <div class="slide"
+                    style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(./src/backgroundHmel.png)">
+                </div>
+                <div class="slide"
+                    style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(./src/backgroundBar.png)">
+                </div>
+            </div>
+
+            <!-- Стрелки навигации -->
+            <div class="slider-nav">
+                <button class="slider-btn prev-btn">&#10094;</button>
+                <button class="slider-btn next-btn">&#10095;</button>
+            </div>
+
+            <!-- Индикаторы слайдов -->
+            <div class="slider-indicators">
+                <div class="slider-dot active" data-slide="0"></div>
+                <div class="slider-dot" data-slide="1"></div>
+                <div class="slider-dot" data-slide="2"></div>
+            </div>
+        </div>
+
         <div class="main-page-header">
             <div class="main-page-header-top">
                 <div class="main-page-header-socials">
@@ -40,14 +67,14 @@
             </div>
             <div class="main-page-header-bottom">
                 <div>Каталог</div>
-                <div>Дистрибуция</div>
-                <div>Комплектация магазинов</div>
-                <div>О компании</div>
-                <div>Контакты</div>
+                <a href="distribution.html">Дистрибуция</a>
+                <a href="complectation.html">Комплектация магазинов</a>
+                <a href="company.html">О компании</a>
+                <a href="contacts.html">Контакты</a>
             </div>
         </div>
         <div class="main-page-main">
-            <div class="main-page-main-title">В стремлении к совершенству.</div>
+            <div class="main-page-main-title">В стремлении <span class="yellow-text">к совершенству.</span></div>
             <div class="main-page-main-text">В ассортименте в большом разнообразии представлены хмельные напитки
                 собственного изготовления, а также от проверенных и надёжных партнёров – приобрести пиво оптом Москве и
                 Московской области можно на выгодных условиях, а главное, будучи уверенным в отличных вкусовых
@@ -99,7 +126,7 @@
                 <div class="we-page-main-container-text">Отборный солод</div>
             </div>
             <div class="we-page-main-container">
-                <img src="/src/goodHmel.png" alt="goodHmel">
+                <img src="./src/goodHmel.png" alt="goodHmel">
                 <div class="we-page-main-container-text">Качественный хмель</div>
             </div>
             <div class="we-page-main-container">
@@ -113,8 +140,8 @@
         </div>
     </div>
     <div class="interruption">
-        <div class="interruption-text">“Чудесное пиво, для
-            замечательных людей”</div>
+        <div class="interruption-text">"Чудесное пиво, для
+            замечательных людей"</div>
     </div>
     <div class="about">
         <div class="about-main-img">
@@ -315,10 +342,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-bottom-left">ООО “Вундербир” 2010 - 2020</div>
+            <div class="footer-bottom-left">ООО "Вундербир" 2010 - 2020</div>
             <div class="footer-bottom-right">Все права защищены ©</div>
         </div>
     </footer>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
