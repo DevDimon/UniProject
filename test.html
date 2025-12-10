@@ -13,8 +13,8 @@
     <title>Каталог - WUNDERBEER</title>
     <style>
         :root {
-            --primary: #e67e22;
-            --primary-dark: #d35400;
+            --primary: #FDCF55;
+            --primary-dark: #d4af37;
             --secondary: #2c3e50;
             --light: #ecf0f1;
             --dark: #34495e;
@@ -30,6 +30,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Fira Sans', 'Roboto Condensed', sans-serif;
+            font-style: medium;
         }
 
         body {
@@ -39,25 +40,31 @@
             overflow-x: hidden;
         }
 
-        /* Шапка */
-        .header-catalog {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+        /* ШАПКА - КАК В DISTRIBUTION */
+        .header-company {
+            height: 390px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65)), url('./src/company-header-bg.png');
+            background-repeat: no-repeat;
+            background-size: cover;
             color: white;
             padding-bottom: 30px;
         }
 
         .main-page-header-top {
+            width: 70rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
         }
 
         .main-page-header-socials {
             display: flex;
-            gap: 15px;
+            gap: 1rem;
         }
 
         .main-page-header-socials img {
@@ -74,7 +81,10 @@
 
         .main-page-header-logo {
             display: flex;
+            flex-direction: column;
             align-items: center;
+            font-size: 35px;
+            color: white;
             gap: 10px;
         }
 
@@ -92,7 +102,7 @@
         .search-cart {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 1rem;
         }
 
         .search-cart img {
@@ -116,7 +126,7 @@
             top: -8px;
             right: -8px;
             background: var(--primary);
-            color: white;
+            color: #333;
             border-radius: 50%;
             width: 18px;
             height: 18px;
@@ -134,28 +144,35 @@
             padding: 15px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 50rem;
+            font-size: 16px;
+            font-weight: bolder;
         }
 
-        .main-page-header-bottom div {
+        .main-page-header-bottom div,
+        .main-page-header-bottom a {
             cursor: pointer;
             transition: var(--transition);
             padding: 5px 10px;
             border-radius: 4px;
             font-size: 16px;
+            color: white;
+            text-decoration: none;
         }
 
-        .main-page-header-bottom div:hover {
+        .main-page-header-bottom div:hover,
+        .main-page-header-bottom a:hover {
             color: var(--primary);
-            background: rgba(255, 255, 255, 0.1);
         }
 
         .header-title {
-            text-align: center;
-            font-size: 36px;
+            text-align: start;
+            font-size: 50px;
             font-weight: bold;
-            margin-top: 30px;
+            margin-top: 100px;
+            margin-bottom: 20px;
+            width: 1125px;
+            color: white;
         }
 
         /* Пагинация */
@@ -182,13 +199,13 @@
 
         .page-btn:hover:not(.disabled) {
             background: var(--primary);
-            color: white;
+            color: #333;
             transform: translateY(-2px);
         }
 
         .page-btn.active {
             background: var(--primary);
-            color: white;
+            color: #333;
         }
 
         .page-btn.disabled {
@@ -399,7 +416,7 @@
 
         .quantity-btn:hover {
             background: var(--primary);
-            color: white;
+            color: #333;
         }
 
         .cart-item-quantity {
@@ -468,7 +485,7 @@
 
         .cart-checkout {
             background: var(--primary);
-            color: white;
+            color: #333;
         }
 
         .cart-checkout:hover {
@@ -494,84 +511,6 @@
             font-size: 48px;
             margin-bottom: 15px;
             color: #bdc3c7;
-        }
-
-        /* Стили для поиска */
-        .search-modal .modal-content {
-            max-width: 600px;
-        }
-
-        .search-input-large {
-            width: 100%;
-            padding: 15px 20px;
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            font-size: 18px;
-            margin-bottom: 20px;
-            transition: var(--transition);
-        }
-
-        .search-input-large:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
-        }
-
-        .search-results-large {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .search-result-large {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 15px;
-            border-bottom: 1px solid #eee;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .search-result-large:hover {
-            background: var(--light);
-        }
-
-        .search-result-large:last-child {
-            border-bottom: none;
-        }
-
-        .search-result-img {
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: var(--light);
-            border-radius: 6px;
-        }
-
-        .search-result-img img {
-            max-width: 80%;
-            max-height: 80%;
-        }
-
-        .search-result-info {
-            flex: 1;
-        }
-
-        .search-result-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-            color: var(--secondary);
-        }
-
-        .search-result-desc {
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        .search-result-price {
-            font-weight: bold;
-            color: var(--primary);
         }
 
         /* Основной контент каталога */
@@ -632,7 +571,7 @@
         .search-input:focus {
             outline: none;
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.2);
+            box-shadow: 0 0 0 3px rgba(253, 207, 85, 0.2);
         }
 
         .search-results {
@@ -761,7 +700,7 @@
 
         .filter-apply {
             background: var(--primary);
-            color: white;
+            color: #333;
         }
 
         .filter-apply:hover {
@@ -873,10 +812,10 @@
 
         .catalog-cart button {
             background: var(--primary);
-            color: white;
-            border: none;
+            color: #333;
+            border: 2px solid var(--primary);
             padding: 10px;
-            border-radius: 6px;
+            border-radius: 50px;
             cursor: pointer;
             font-weight: bold;
             transition: var(--transition);
@@ -885,6 +824,7 @@
 
         .catalog-cart button:hover {
             background: var(--primary-dark);
+            border-color: var(--primary-dark);
         }
 
         .no-products {
@@ -943,34 +883,43 @@
 
         /* Подвал */
         footer {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-image: url(./src/footer-bg.png);
             color: white;
+            gap: 15px;
             padding: 40px 20px 20px;
             margin-top: 50px;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         .footer-main {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 100%;
             display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 30px;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
         }
 
         .footer-main-left {
-            flex: 1;
-            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
         }
 
         .footer-main-left-top {
             display: flex;
+            flex-direction: row;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-            font-weight: bold;
-            font-size: 20px;
+            font-size: 40px;
+            color: #FDCF55;
+            gap: 20px;
+            font-family: 'Roboto Condensed', sans-serif;
         }
 
         .footer-logo {
@@ -980,10 +929,8 @@
         }
 
         .footer-main-left-text {
-            margin-bottom: 15px;
-            color: #bdc3c7;
-            line-height: 1.6;
-            font-size: 14px;
+            font-size: 15px;
+            white-space: pre-line;
         }
 
         .footer-main-left-icons {
@@ -1004,23 +951,24 @@
         }
 
         .footer-main-middle {
-            flex: 1;
-            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            gap: 20px;
         }
 
         .footer-main-middle-title {
-            font-weight: bold;
-            margin-bottom: 15px;
-            font-size: 18px;
+            color: #FDCF55;
         }
 
         .footer-main-middle-info {
             display: flex;
-            align-items: flex-start;
+            flex-direction: row;
+            white-space: pre-line;
+            justify-content: space-between;
+            align-items: center;
             gap: 10px;
-            margin-bottom: 10px;
-            color: #bdc3c7;
-            font-size: 14px;
         }
 
         .footer-main-middle-info img {
@@ -1031,8 +979,12 @@
         }
 
         .footer-main-right {
-            flex: 1;
-            min-width: 150px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: start;
+            gap: 20px;
+            color: #FDCF55;
         }
 
         .footer-main-right div {
@@ -1043,24 +995,25 @@
         }
 
         .footer-main-right div:hover {
-            color: var(--primary);
+            color: white;
         }
 
         .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 50%;
             display: flex;
+            flex-direction: row;
             justify-content: space-between;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #bdc3c7;
-            font-size: 14px;
+            align-items: center;
         }
 
         /* Адаптивность */
         @media (max-width: 1100px) {
             .catalog-products {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-main {
+                gap: 30px;
             }
         }
 
@@ -1084,6 +1037,7 @@
             .main-page-header-bottom {
                 flex-wrap: wrap;
                 gap: 10px;
+                width: 100%;
             }
 
             .discount-banner h2 {
@@ -1097,6 +1051,10 @@
             .pagination {
                 flex-wrap: wrap;
             }
+
+            .main-page-header-top {
+                width: 100%;
+            }
         }
 
         @media (max-width: 600px) {
@@ -1108,6 +1066,7 @@
                 flex-direction: column;
                 gap: 10px;
                 text-align: center;
+                width: 100%;
             }
 
             .main-page-header-top {
@@ -1117,6 +1076,8 @@
 
             .header-title {
                 font-size: 28px;
+                width: 100%;
+                text-align: center;
             }
 
             .discount-banner {
@@ -1164,25 +1125,26 @@
         .notification.show {
             transform: translateX(0);
         }
+
+        button {
+            width: 255px;
+            height: 50px;
+            background-color: var(--primary);
+            border-radius: 50px;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        button:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
     </style>
 </head>
 
 <body>
-    <!-- Модальное окно поиска -->
-    <div class="modal search-modal" id="searchModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title">Поиск товаров</div>
-                <button class="modal-close">&times;</button>
-            </div>
-            <div class="modal-body">
-                <input type="text" class="search-input-large" id="searchModalInput"
-                    placeholder="Введите название товара...">
-                <div class="search-results-large" id="searchModalResults"></div>
-            </div>
-        </div>
-    </div>
-
     <!-- Модальное окно корзины -->
     <div class="modal" id="cartModal">
         <div class="modal-content">
@@ -1201,31 +1163,32 @@
         </div>
     </div>
 
-    <header class="header-catalog">
+    <!-- ШАПКА КАК В DISTRIBUTION -->
+    <header class="header-company">
         <div class="main-page-header-top">
             <div class="main-page-header-socials">
-                <img src="src/Instagram.png" alt="Instagram">
-                <img src="src/VK.png" alt="VK">
-                <img src="src/Instagram.png" alt="Telegram">
+                <img src="./src/Instagram.png" alt="Instagram">
+                <img src="./src/VK.png" alt="VK">
+                <img src="./src/Frame.png" alt="Telegram">
             </div>
             <div class="main-page-header-logo">
-                <img src="src/logo 1.png" alt="logo" class="logo">
+                <img src="./src/logo 1.png" alt="logo" class="logo">
                 <p class="logo-title">WUNDERBEER</p>
             </div>
             <div class="search-cart">
-                <img src="src/Search (Traced).png" alt="search" id="headerSearchIcon">
+                <img src="./src/Search (Traced).png" alt="search" id="headerSearchIcon">
                 <div class="cart" id="headerCartIcon">
-                    <img src="src/Cart.png" alt="cart">
+                    <img src="./src/Cart.png" alt="cart">
                     <span class="cart-count">0</span>
                 </div>
             </div>
         </div>
         <div class="main-page-header-bottom">
             <div>Каталог</div>
-            <div>Дистрибуция</div>
-            <div>Комплектация магазинов</div>
-            <div>О компании</div>
-            <div>Контакты</div>
+            <a href="distribution.html">Дистрибуция</a>
+            <a href="complectation.html">Комплектация магазинов</a>
+            <a href="company.html">О компании</a>
+            <a href="contacts.html">Контакты</a>
         </div>
         <div class="header-title">Каталог</div>
     </header>
@@ -1370,33 +1333,33 @@
         <div class="footer-main">
             <div class="footer-main-left">
                 <div class="footer-main-left-top">
-                    <img src="src/logo 1.png" alt="WUNDERBEER" class="footer-logo">
+                    <img src="./src/logo 1.png" alt="WUNDERBEER" class="footer-logo">
                     WUNDERBEER
                 </div>
                 <div class="footer-main-left-text">В ассортименте в большом разнообразии представлены хмельные напитки
                     собственного изготовления, а также от проверенных и надёжных партнёров.</div>
                 <div class="footer-main-left-icons">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram">
-                    <img src="https://cdn-icons-png.flaticon.com/512/145/145813.png" alt="VK">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Telegram">
+                    <img src="./src/Instagram.png" alt="Instagram">
+                    <img src="./src/VK.png" alt="VK">
+                    <img src="./src/Frame.png" alt="Telegram">
                 </div>
             </div>
             <div class="footer-main-middle">
                 <div class="footer-main-middle-title">Контактная информация</div>
                 <div class="footer-main-middle-info">
-                    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="">
+                    <img src="./src/Map-marker.png" alt="">
                     <div>Россия, Москва, Рязанский проспект 22, к2</div>
                 </div>
                 <div class="footer-main-middle-info">
-                    <img src="https://cdn-icons-png.flaticon.com/512/126/126509.png" alt="">
+                    <img src="./src/Phone.png" alt="">
                     <div>+7 (495) 740-40-51</div>
                 </div>
                 <div class="footer-main-middle-info">
-                    <img src="https://cdn-icons-png.flaticon.com/512/126/126509.png" alt="">
+                    <img src="./src/Phone.png" alt="">
                     <div>+7 (925) 924-07-00</div>
                 </div>
                 <div class="footer-main-middle-info">
-                    <img src="https://cdn-icons-png.flaticon.com/512/542/542638.png" alt="">
+                    <img src="./src/Mail.png" alt="">
                     <div>wunderbeer@mail.ru</div>
                 </div>
             </div>
@@ -1429,7 +1392,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1440,7 +1403,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1451,7 +1414,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
             {
@@ -1462,7 +1425,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1473,7 +1436,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1484,7 +1447,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
             {
@@ -1495,7 +1458,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1506,7 +1469,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1517,7 +1480,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
             {
@@ -1528,7 +1491,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1539,7 +1502,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1550,7 +1513,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
 
@@ -1563,7 +1526,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1574,7 +1537,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1585,7 +1548,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
             {
@@ -1596,7 +1559,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1607,7 +1570,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1618,7 +1581,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
             {
@@ -1629,7 +1592,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1640,7 +1603,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1651,7 +1614,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
             {
@@ -1662,7 +1625,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1673,7 +1636,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1684,7 +1647,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
 
@@ -1697,7 +1660,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1708,7 +1671,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1719,7 +1682,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
             {
@@ -1730,7 +1693,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1741,7 +1704,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1752,7 +1715,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
             {
@@ -1763,7 +1726,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1774,7 +1737,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1785,7 +1748,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
             {
@@ -1796,7 +1759,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle1.png",
+                image: "./src/bottle1.png",
                 badge: "discount"
             },
             {
@@ -1807,7 +1770,7 @@
                 type: ["светлое", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle2.png",
+                image: "./src/bottle2.png",
                 badge: "new"
             },
             {
@@ -1818,7 +1781,7 @@
                 type: ["тёмное", "нефильтрованное"],
                 strength: "4% - 6%",
                 country: "россия",
-                image: "src/bottle3.png",
+                image: "./src/bottle3.png",
                 badge: "discount"
             },
         ];
@@ -1845,11 +1808,8 @@
             // Элементы модальных окон
             const headerSearchIcon = document.getElementById('headerSearchIcon');
             const headerCartIcon = document.getElementById('headerCartIcon');
-            const searchModal = document.getElementById('searchModal');
             const cartModal = document.getElementById('cartModal');
             const modalCloses = document.querySelectorAll('.modal-close');
-            const searchModalInput = document.getElementById('searchModalInput');
-            const searchModalResults = document.getElementById('searchModalResults');
             const cartItems = document.getElementById('cartItems');
             const cartTotal = document.getElementById('cartTotal');
 
@@ -1869,8 +1829,7 @@
 
             // Обработчики иконок в шапке
             headerSearchIcon.addEventListener('click', function () {
-                searchModal.classList.add('active');
-                searchModalInput.focus();
+                // Убрано модальное окно поиска
             });
 
             headerCartIcon.addEventListener('click', function () {
@@ -1881,18 +1840,15 @@
             // Закрытие модальных окон
             modalCloses.forEach(closeBtn => {
                 closeBtn.addEventListener('click', function () {
-                    searchModal.classList.remove('active');
                     cartModal.classList.remove('active');
                 });
             });
 
             // Закрытие по клику вне модального окна
-            [searchModal, cartModal].forEach(modal => {
-                modal.addEventListener('click', function (e) {
-                    if (e.target === modal) {
-                        modal.classList.remove('active');
-                    }
-                });
+            cartModal.addEventListener('click', function (e) {
+                if (e.target === cartModal) {
+                    cartModal.classList.remove('active');
+                }
             });
 
             // Пагинация
@@ -1914,22 +1870,6 @@
                     updatePagination();
                     // Прокрутка к верху страницы
                     window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
-            });
-
-            // Поиск в модальном окне
-            searchModalInput.addEventListener('input', function () {
-                const searchTerm = this.value.toLowerCase().trim();
-
-                if (searchTerm.length > 0) {
-                    const filteredProducts = products.filter(product =>
-                        product.name.toLowerCase().includes(searchTerm) ||
-                        product.description.toLowerCase().includes(searchTerm)
-                    );
-
-                    displaySearchModalResults(filteredProducts);
-                } else {
-                    searchModalResults.innerHTML = '';
                 }
             });
 
@@ -2100,10 +2040,12 @@
                     const originalText = this.textContent;
                     this.textContent = 'Добавлено!';
                     this.style.background = '#27ae60';
+                    this.style.borderColor = '#27ae60';
 
                     setTimeout(() => {
                         this.textContent = originalText;
                         this.style.background = '';
+                        this.style.borderColor = '';
                     }, 2000);
                 });
 
@@ -2123,38 +2065,6 @@
                     div.className = 'search-result-item';
                     div.textContent = product.name;
                     searchResults.appendChild(div);
-                });
-            }
-
-            function displaySearchModalResults(products) {
-                searchModalResults.innerHTML = '';
-
-                if (products.length === 0) {
-                    searchModalResults.innerHTML = '<div class="search-result-large">Ничего не найдено</div>';
-                    return;
-                }
-
-                products.forEach(product => {
-                    const div = document.createElement('div');
-                    div.className = 'search-result-large';
-                    div.innerHTML = `
-                        <div class="search-result-img">
-                            <img src="${product.image}" alt="${product.name}">
-                        </div>
-                        <div class="search-result-info">
-                            <div class="search-result-name">${product.name}</div>
-                            <div class="search-result-desc">${product.description}</div>
-                        </div>
-                        <div class="search-result-price">${product.price} ₽</div>
-                    `;
-
-                    div.addEventListener('click', function () {
-                        addToCart(product.id);
-                        searchModal.classList.remove('active');
-                        showNotification('Товар добавлен в корзину!');
-                    });
-
-                    searchModalResults.appendChild(div);
                 });
             }
 
