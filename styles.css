@@ -4,35 +4,107 @@ body {
     font-style: medium;
 }
 
-.main-page {
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 62.9375rem;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)), url(./src/backgroundBeer.png);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 145px;
+/* Стили для слайдера */
+.slider-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
-.main-page-header {
+.slides-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* Стрелки навигации */
+.slider-nav {
+    position: absolute;
+    top: 50%;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    transform: translateY(-50%);
+    z-index: 10;
 }
 
+.slider-btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #f8d568;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-btn:hover {
+    background-color: rgba(248, 213, 104, 0.8);
+    color: #0d0d0d;
+    transform: scale(1.1);
+}
+
+/* Индикаторы слайдов */
+.slider-indicators {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.slider-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background-color: #f8d568;
+    transform: scale(1.2);
+}
+
+/* Основные стили */
 .main-page-header-top {
     width: 70rem;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
 .main-page-header-socials {
     display: flex;
-    flex-direction: row;
     gap: 1rem;
     align-items: center;
 }
@@ -43,37 +115,64 @@ body {
     align-items: center;
     font-size: 35px;
     color: white;
-}
-
-.main-page-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 35px;
-    color: white;
-}
-
-.logo {
-    width: 94px;
-    height: 111px;
-    padding-top: 10px;
+    text-decoration: none;
 }
 
 .search-cart {
     display: flex;
-    flex-direction: row;
     gap: 1rem;
     align-items: center;
 }
 
 .main-page-header-bottom {
     display: flex;
-    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 70rem;
     color: white;
-    width: 50rem;
     font-size: 16px;
-    font-weight: bolder;
-    justify-content: space-between;
+    font-weight: bold;
+}
+
+.main-page-header-bottom div,
+.main-page-header-bottom a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.main-page-header-bottom a:hover {
+    color: #f8d568;
+}
+
+.logo {
+    width: 94px;
+    height: 111px;
+}
+
+/* Остальные стили без изменений */
+.main-page {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 62.9375rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 145px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-page-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    position: relative;
 }
 
 .main-page-main {
@@ -84,6 +183,8 @@ body {
     align-items: center;
     width: 69rem;
     gap: 28px;
+    z-index: 10;
+    position: relative;
 }
 
 .main-page-main-title {
@@ -91,6 +192,10 @@ body {
     width: 650px;
     text-align: center;
     line-height: 70px;
+}
+
+.yellow-text {
+    color: #f8d568;
 }
 
 .main-page-main-text {
@@ -105,6 +210,18 @@ button {
     background-color: #FDCF55;
     border-radius: 50px;
     border: 2px solid #FDCF55;
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #f8d568;
+    border-color: #f8d568;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .we-page {
@@ -259,22 +376,10 @@ button {
 }
 
 .about-main-img {
-    /* width: 395px;
-    height: 695px; */
     display: flex;
     flex-direction: column;
     position: relative;
 }
-
-/* .about-main-img-pint {
-    width: 250px;
-    height: 450px;
-}
-
-.about-main-img-hmel {
-    width: 200px;
-    height: 400px;
-} */
 
 .services {
     width: 100%;
@@ -505,23 +610,28 @@ button {
     white-space: pre-line;
 }
 
+/* Новый футер без изменений */
 footer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     background-image: url(./src/footer-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     gap: 15px;
+    padding: 40px 0 20px;
 }
 
 .footer-main {
     width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 100px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
 }
 
 .footer-main-left {
@@ -544,6 +654,11 @@ footer {
 .footer-main-left-text {
     font-size: 15px;
     white-space: pre-line;
+}
+
+.footer-main-left-icons {
+    display: flex;
+    gap: 15px;
 }
 
 .footer-main-middle {
@@ -576,12 +691,19 @@ footer {
     color: #FDCF55;
 }
 
+.footer-main-right a {
+    color: #FDCF55;
+    text-decoration: none;
+}
+
 .footer-bottom {
-    width: 50%;
+    width: 100%;
+    max-width: 1200px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px;
 }
 
 .header-company {
@@ -591,6 +713,8 @@ footer {
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65)), url(./src/company-header-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .header-title {
@@ -600,8 +724,7 @@ footer {
     align-items: start;
     color: white;
     font-size: 50px;
-    margin-top: 100px;
-    margin-bottom: 20px;
+    margin-top: 60px;
 }
 
 .history {
@@ -688,7 +811,189 @@ footer {
     text-align: center;
 }
 
+
 .delivery {
+    min-height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    gap: 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.delivery-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+    max-width: 700px;
+}
+
+.delivery-left-title {
+    font-size: 35px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.delivery-left-text {
+    white-space: pre-line;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.delivery-right {
+    flex: 0 0 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7)), url(./src/delivery-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    min-height: 500px;
+}
+
+.delivery-right-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 1.3;
+    color: #FDCF55;
+}
+
+.delivery-right-text {
+    white-space: pre-line;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.input-delivery {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 0 20px;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.input-delivery::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.input-delivery:focus {
+    outline: none;
+    border-color: #FDCF55;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(253, 207, 85, 0.2);
+}
+
+.delivery-right-personal-data {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.delivery-right button {
+    width: 100%;
+    height: 50px;
+    background-color: #FDCF55;
+    border: none;
+    border-radius: 8px;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.delivery-right button:hover {
+    background-color: #f8d568;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    .delivery {
+        flex-direction: column;
+        gap: 50px;
+        padding: 40px 20px;
+    }
+
+    .delivery-left {
+        max-width: 100%;
+    }
+
+    .delivery-right {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .delivery {
+        padding: 30px 15px;
+        gap: 40px;
+    }
+
+    .delivery-left-title {
+        font-size: 28px;
+    }
+
+    .delivery-left-text {
+        font-size: 15px;
+    }
+
+    .delivery-right {
+        padding: 30px 20px;
+    }
+
+    .delivery-right-title {
+        font-size: 24px;
+    }
+
+    .delivery-right-text {
+        font-size: 15px;
+    }
+
+    .input-delivery {
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .delivery-right button {
+        height: 45px;
+        font-size: 15px;
+    }
+}
+
+/* .delivery {
     height: 460px;
     display: flex;
     flex-direction: row;
@@ -740,37 +1045,55 @@ footer {
     height: 50px;
     background-color: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-}
+} */
+
 
 .how-to-buy {
-    height: 620px;
+    min-height: 620px;
+    /* Изменил height на min-height */
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5)), url(./src/htb-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
+    padding: 60px 20px;
+    /* Добавил отступы */
 }
 
 .how-to-buy-main {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    max-width: 1200px;
+    /* Ограничил максимальную ширину */
+    width: 100%;
 }
 
 .how-to-buy-title {
-    font-size: 30px;
+    font-size: 35px;
+    /* Увеличил размер шрифта */
     font-weight: bold;
-    display: flex;
-    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .how-to-buy-text {
     white-space: pre-line;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 1.6;
+    /* Улучшил межстрочный интервал */
     font-weight: 300;
+    max-width: 900px;
+    /* Ограничил ширину текста */
+    text-align: left;
+    /* Выравнивание по левому краю */
+    width: 100%;
 }
 
 .policy-main {
@@ -800,7 +1123,6 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     gap: 150px;
-    /* align-items: center; */
 }
 
 .contacts-top-left {
@@ -914,7 +1236,6 @@ footer {
 
 .complectation-main-img {
     display: flex;
-    display: flex;
     flex-direction: row;
     gap: 25px;
 }
@@ -989,7 +1310,6 @@ footer {
 
 .distribution-main-img {
     display: flex;
-    display: flex;
     flex-direction: row;
     gap: 25px;
 }
@@ -1015,4 +1335,30 @@ footer {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+
+    .main-page-header-top,
+    .main-page-header-bottom {
+        width: 100%;
+        padding: 15px 20px;
+    }
+
+    .main-page-main {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .main-page-main-title {
+        font-size: 40px;
+        width: 100%;
+        line-height: 1.2;
+    }
+
+    .main-page-main-text {
+        width: 100%;
+        padding: 0 20px;
+    }
 }

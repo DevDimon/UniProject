@@ -1,0 +1,1099 @@
+/* СТИЛИ HEADER И FOOTER */
+body {
+    margin: 0 auto;
+    font-family: 'Fira Sans', sans-serif;
+    font-style: medium;
+}
+
+/* HEADER STYLES */
+.header-catalog {
+    height: 390px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.65)), url(./src/catalog-header-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-page-header-top {
+    width: 70rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.main-page-header-socials {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.main-page-header-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+}
+
+.logo {
+    width: 94px;
+    height: 111px;
+    margin-top: 15px;
+}
+
+.search-cart {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #FDCF55;
+    color: #333;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.main-page-header-bottom {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    width: 50rem;
+    font-size: 16px;
+    font-weight: bolder;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.main-page-header-bottom a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.main-page-header-bottom a:hover {
+    color: #FDCF55;
+}
+
+.header-title {
+    width: 1125px;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    color: white;
+    font-size: 50px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+}
+
+/* FOOTER STYLES */
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(./src/footer-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    gap: 15px;
+    padding: 40px 0 20px;
+    margin-top: 80px;
+}
+
+.footer-main {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.footer-main-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-main-left-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 40px;
+    color: #FDCF55;
+    gap: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.footer-main-left-text {
+    font-size: 15px;
+    white-space: pre-line;
+}
+
+.footer-main-left-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-main-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+}
+
+.footer-main-middle-title {
+    color: #FDCF55;
+}
+
+.footer-main-middle-info {
+    display: flex;
+    flex-direction: row;
+    white-space: pre-line;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-main-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+    color: #FDCF55;
+}
+
+.footer-main-right a {
+    color: #FDCF55;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* ОСНОВНЫЕ СТИЛИ */
+:root {
+    --primary: #FDCF55;
+    --primary-dark: #d4af37;
+    --secondary: #2c3e50;
+    --light: #ecf0f1;
+    --dark: #34495e;
+    --gray: #7f8c8d;
+    --success: #27ae60;
+    --danger: #e74c3c;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', 'Roboto Condensed', sans-serif;
+    font-style: medium;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0;
+    padding: 20px;
+}
+
+.page-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: white;
+    color: var(--dark);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: bold;
+    box-shadow: var(--shadow);
+}
+
+.page-btn:hover:not(.disabled) {
+    background: var(--primary);
+    color: #333;
+    transform: translateY(-2px);
+}
+
+.page-btn.active {
+    background: var(--primary);
+    color: #333;
+}
+
+.page-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.page-info {
+    margin: 0 20px;
+    color: var(--gray);
+    font-weight: bold;
+}
+
+/* Баннер скидки */
+.discount-banner {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65)), url(./src/banner-bg.png) no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 30px 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    grid-column: 1 / -1;
+}
+
+.discount-banner h2 {
+    color: var(--primary);
+    font-size: 32px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.discount-banner p {
+    font-size: 18px;
+    margin-bottom: 0;
+    opacity: 0.9;
+}
+
+/* Модальные окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--secondary);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--gray);
+    transition: var(--transition);
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.modal-close:hover {
+    color: var(--danger);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+/* Стили для корзины */
+.cart-items {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+.cart-item-img {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--light);
+    border-radius: 8px;
+}
+
+.cart-item-img img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--secondary);
+}
+
+.cart-item-price {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    background: var(--light);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.quantity-btn:hover {
+    background: var(--primary);
+    color: #333;
+}
+
+.cart-item-quantity {
+    font-weight: bold;
+    min-width: 30px;
+    text-align: center;
+}
+
+.cart-remove {
+    background: var(--danger);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.cart-remove:hover {
+    background: #c0392b;
+    transform: scale(1.1);
+}
+
+.cart-total {
+    padding: 20px;
+    border-top: 2px solid #eee;
+    background: #f8f9fa;
+    border-radius: 0 0 12px 12px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.total-final {
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--primary);
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.cart-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.cart-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.cart-checkout {
+    background: var(--primary);
+    color: #333;
+}
+
+.cart-checkout:hover {
+    background: var(--primary-dark);
+}
+
+.cart-continue {
+    background: var(--light);
+    color: var(--dark);
+}
+
+.cart-continue:hover {
+    background: #d5dbdb;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gray);
+}
+
+.empty-cart i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #bdc3c7;
+}
+
+/* Основной контент каталога */
+.catalog-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.catalog-main-top {
+    display: flex;
+    gap: 30px;
+}
+
+.catalog-main-left {
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+}
+
+/* СТИЛЬ ДЛЯ ВСЕГО ЛЕВОГО МЕНЮ */
+.catalog-main-left-menu {
+    background-color: #262022;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    transition: var(--transition);
+    color: #fff;
+}
+
+/* Стили для поиска */
+.catalog-main-left-searchbar {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: var(--transition);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(253, 207, 85, 0.2);
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #333;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    z-index: 10;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-result-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: var(--transition);
+    color: #fff;
+}
+
+.search-result-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+/* Блок категорий */
+.catalog-main-left-category {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Стили для фильтров */
+.filter-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+}
+
+.filter-title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 10px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-option input {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.filter-option label {
+    cursor: pointer;
+    font-size: 14px;
+    transition: var(--transition);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.filter-option label:hover {
+    color: var(--primary);
+}
+
+.price-range {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.price-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.price-inputs input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.price-inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.filter-apply {
+    background: var(--primary);
+    color: #333;
+}
+
+.filter-apply:hover {
+    background: var(--primary-dark);
+}
+
+.filter-reset {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.filter-reset:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--danger);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.new-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--success);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Блок "Остались вопросы" */
+.delivery-right {
+    background: url(./src/catalog-bg.png) no-repeat center center;
+    background-size: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    transition: var(--transition);
+    color: white;
+    position: relative;
+}
+
+.delivery-right::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    z-index: 1;
+}
+
+.delivery-right>* {
+    position: relative;
+    z-index: 2;
+}
+
+.catalog-main-right {
+    flex: 1;
+    position: relative;
+}
+
+.catalog-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+.catalog-cart {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 15px;
+    transition: var(--transition);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    animation: fadeIn 0.5s ease;
+}
+
+.catalog-cart.hidden {
+    display: none;
+}
+
+.catalog-cart:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.catalog-cart-img {
+    position: relative;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.catalog-cart-img img {
+    max-height: 160px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.catalog-cart div:nth-child(2) {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--secondary);
+    font-size: 16px;
+}
+
+.catalog-cart div:nth-child(3) {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+}
+
+.catalog-cart div:nth-child(4) {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.catalog-cart button {
+    background: var(--primary);
+    color: #333;
+    border: 2px solid var(--primary);
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.catalog-cart button:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.no-products {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: var(--gray);
+    font-size: 18px;
+}
+
+.delivery-right-title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.delivery-right-text {
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+}
+
+.input-delivery {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.input-delivery::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.delivery-right-personal-data {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.delivery-right button {
+    background: var(--primary);
+    color: #333;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    transition: var(--transition);
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.delivery-right button:hover {
+    background: var(--primary-dark);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Уведомление */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    background: var(--success);
+    color: white;
+    border-radius: 6px;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transform: translateX(150%);
+    transition: transform 0.4s ease;
+    font-size: 14px;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+button {
+    width: 255px;
+    height: 50px;
+    background-color: var(--primary);
+    border-radius: 50px;
+    border: 2px solid var(--primary);
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+button:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+/* Адаптивность */
+@media (max-width: 1100px) {
+    .catalog-products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-main {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .catalog-main-top {
+        flex-direction: column;
+    }
+
+    .catalog-main-left {
+        flex: 1;
+        width: 100%;
+        position: static;
+        max-height: none;
+    }
+
+    .footer-main {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .main-page-header-bottom {
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .discount-banner h2 {
+        font-size: 24px;
+    }
+
+    .discount-banner p {
+        font-size: 16px;
+    }
+
+    .pagination {
+        flex-wrap: wrap;
+    }
+
+    .main-page-header-top {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog-products {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .header-title {
+        font-size: 36px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .discount-banner {
+        padding: 20px 15px;
+    }
+
+    .discount-banner h2 {
+        font-size: 20px;
+    }
+
+    .discount-banner p {
+        font-size: 14px;
+    }
+
+    .footer-main {
+        gap: 30px;
+    }
+}
